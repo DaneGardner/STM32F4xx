@@ -105,15 +105,15 @@ SECTIONS
     } > FLASH
 
     /*
-     * Task init section section
+     * Task init section
      */
-    .initcalltask.init :
+    .taskCB.init :
     {
         . = ALIGN(4);
-        __task_initcall_start__ = .;
-        KEEP(*(.initcalltask.init))
+        __taskCB_start__ = .;
+        KEEP(*(.taskCB.init))
         . = ALIGN(4);
-        __task_initcall_end__ = .;
+        __taskCB_end__ = .;
     } >FLASH
 
 
